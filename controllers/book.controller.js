@@ -32,7 +32,7 @@ module.exports.bookController ={
     })
    },
    getbookgenre: async (req, res) => {
-   const data = await Book.find().populate('genre', "-_id -__v")
+   const data = await Book.find({genre: req.params.id}).populate('genre', "-_id -__v")
         res.json(data)
     }
    }

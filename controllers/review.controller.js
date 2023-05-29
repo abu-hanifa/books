@@ -18,7 +18,7 @@ module.exports.reviewController = {
     },
     getreviewbook: (req, res) => {
         console.log(1232421421421)
-        Review.find().populate('bookReview').then((data) => {
+        Review.find({bookReview: req.params.id}).populate('bookReview').then((data) => {
             res.json(data)
         })
 
